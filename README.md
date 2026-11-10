@@ -2,7 +2,7 @@
 
 A ticketing and progress-tracking portal for the real-time data team. The team logs and works tickets; managers follow progress, raise requests and sign off finished work. Every report prints cleanly to A4 or saves as a PDF.
 
-**Live:** https://waliworkshere.github.io/taskmanagementportal/
+**Live:** https://taskmanagementportal.vercel.app
 
 ## What it does
 
@@ -39,4 +39,4 @@ python3 -m http.server 8000
 
 ## One-time Supabase setting
 
-In the Supabase dashboard → **Authentication → URL Configuration**, set **Site URL** to `https://waliworkshere.github.io/taskmanagementportal/` so sign-up confirmation emails link back to the portal.
+In the Supabase dashboard → **Authentication → URL Configuration**, set **Site URL** to `https://taskmanagementportal.vercel.app` so sign-up confirmation emails link back to the portal.
