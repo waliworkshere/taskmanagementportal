@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Portal</title>
+  <meta name="description" content="Ticketing and progress tracking for the real-time data team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6e63'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="topbar no-print" id="topbar" hidden>
+    <div class="topbar-inner">
+      <a class="brand" href="#/dashboard"><span class="mark" aria-hidden="true">✓</span> Task Portal</a>
+      <nav class="mainnav" id="mainnav" aria-label="Main">
+        <a href="#/dashboard" data-nav="dashboard">Dashboard</a>
+        <a href="#/tickets" data-nav="tickets">Tickets</a>
+        <a href="#/board" data-nav="board">Board</a>
+        <a href="#/report" data-nav="report">Reports</a>
+        <a href="#/team" data-nav="team" data-admin>Team</a>
+      </nav>
+      <div class="userbox">
+        <a class="btn primary small" href="#/new">+ New ticket</a>
+        <a class="who" href="#/account" id="whoami"></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" class="page" aria-live="polite">
+    <p class="muted">Loading…</p>
+  </main>
+
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+      <div class="modal-actions">
+        <button class="btn" id="modal-cancel" type="button">Cancel</button>
+        <button class="btn primary" id="modal-ok" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
