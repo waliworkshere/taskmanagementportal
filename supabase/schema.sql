@@ -209,3 +209,15 @@ revoke all on public.ticket_comments, public.work_logs, public.ticket_events fro
 revoke insert, update, delete on public.ticket_events from authenticated;
 revoke all on function public.set_user_role(uuid, text) from anon;
 revoke all on function public.sign_off(bigint) from anon;
+
+-- Function access: trigger functions are not callable; helpers and actions need a signed-in user
+revoke execute on function public.handle_new_user() from public, anon, authenticated;
+revoke execute on function public.tickets_after() from public, anon, authenticated;
+revoke execute on function public.my_role() from public, anon;
+revoke execute on function public.is_active() from public, anon;
+revoke execute on function public.set_user_role(uuid, text) from public, anon;
+revoke execute on function public.sign_off(bigint) from public, anon;
+grant execute on function public.my_role() to authenticated;
+grant execute on function public.is_active() to authenticated;
+grant execute on function public.set_user_role(uuid, text) to authenticated;
+grant execute on function public.sign_off(bigint) to authenticated;
